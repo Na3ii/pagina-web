@@ -1,0 +1,945 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Barlow Condensed', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+
+    background-color: black;
+}
+
+h2, h3 {
+    color: white;
+    font-size: 1.8em;
+}
+
+/*-------------
+        HEADER
+--------------*/
+
+.opacity-40 {
+    opacity: 0.4;
+}
+
+.bg-carousel {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    top: -80px;
+    left: 0;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.bg-carousel > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.bg-carousel div:nth-of-type(1) {
+    position: relative;
+}
+
+.bg-carousel .gradient {
+    background: linear-gradient(180deg, transparent 5%, #000000 100%);
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+}
+
+.video-bg {
+   
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-bg video {
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+
+}
+
+.bg-carousel::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 150px;
+    background: linear-gradient(180deg, transparent 5%, #000000 100%);
+    z-index: 30;
+}
+/*-------------
+        NAVBAR
+--------------*/
+
+.show {
+    display: flex !important;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+nav .logo-menu{
+    padding: 10px 0px 0px 30px;
+    animation-name: opening-logo;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+
+nav ul li > a{
+    display: block;
+    position: relative;
+    align-items: center;
+    padding: 10px 20px 10px 15px;
+    text-decoration: none;
+
+    color: white;
+}
+
+nav ul li .link::before{
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+
+    background-color: white;
+}
+
+nav ul li .link:hover::before{
+    transform: scaleX(1);
+}
+
+nav .more {
+    display: none;
+}
+
+nav .more .menu {
+    animation-name: opening-submenu;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+nav .menu{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    min-width: 200px;
+    margin-top: 0px;
+
+    background-color: white;
+}
+
+nav .menu a{
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+nav .menu a:hover {
+    background-color: black;
+    color: white;
+}
+
+nav .mobile {
+    display: none;
+    width: 100%;
+}
+
+nav .mobile .header {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0px 0px 0px;
+    
+
+    background-color: black,
+
+
+}
+
+nav .mobile .header img{
+    animation-name: opening-logo;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+nav .mobile .header .menu-mobile-der a{
+    color: white;
+    display: inline-flex;
+    text-decoration: none;
+    padding: 20px 10px 10px 10px;
+
+}
+
+nav .mobile .header #bmenu {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    color: white;
+}
+
+nav .mobile .links{
+    display: none;
+    flex-direction: column;
+    position: relative;
+    z-index: 200;
+    left: 0;
+    animation-name: opening-menu;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+
+}
+
+nav .mobile .links a{
+    font-size: 20px;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    
+    color: white;
+}
+
+nav .mobile .links a:hover{
+    font-size: 20px;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+
+    background-color: white;
+    color: black;
+}
+
+/*-------------
+        BANNER
+--------------*/
+
+#tittle-banner {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0, 0, 20px, 0;
+}
+
+#tittle-banner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: -10px;
+    left: 0;
+    transform: scale(1.2) skewY(-30deg) rotate(30deg);
+
+    background-color: #332775;
+}
+
+#banner {
+    font-size: 1.6em;
+    text-align: center;
+    padding: 40px;
+    width: 500px;
+    position: absolute;
+    z-index: 100;
+    top: 250px;
+    right: 100px;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-button {
+    text-transform: uppercase;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #332775;
+    color: #000000;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.banner-button:hover{
+    background-color: #6CE2F0;
+}
+
+.banner-sign-in {
+    text-transform: uppercase;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #332775;
+    color: #000000;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.banner-sign-in:hover{
+    background-color: #6CE2F0
+}
+
+/*-------------
+        QUIENES-SOMOS
+--------------*/
+
+.quienes-somos {
+    display: block;
+    font-size: 1.8em;
+    text-align: center;
+    padding: 40px 50px;
+    width: 100%;
+    top: 250px;
+    right: 100px;
+    margin-bottom: 3em;
+
+    color: white;
+}
+
+.about-us-button {
+    text-transform: uppercase;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #332775;
+    color: #000000;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.about-us-button:hover{
+    background-color: #6CE2F0;
+}
+
+/*
+    PODCAST
+**/
+
+.podcast-carousel{
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.podcast-carousel .tittle-podcast{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.podcast-carousel .tittle-podcast h2 {
+    margin: 0;
+}
+.podcast-carousel .tittle-podcast h2 > a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.podcast-carousel .tittle-podcast h2 a::before{
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+
+    background-color: white;
+}
+
+.podcast-carousel .tittle-podcast h2 a:hover::before{
+    transform: scaleX(0.3);
+}
+
+.podcast-carousel .navigation{
+    position: absolute;
+    top: 12em;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+}
+
+.podcast-carousel .navigation .content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 3em;
+}
+
+.podcast-carousel .navigation .nav-item{
+    margin: 0;
+    font-weight: 500;
+    flex-grow: 1;
+    flex-basis: 0;
+    position: relative;
+    padding-top: 1.5em;
+    text-decoration: none;
+    text-shadow: rgb(0, 0, 0 / 30%) 0px 0px 5px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.podcast-carousel .navigation .content .nav-item .nav-item-tittle::before{
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+
+    background-color: white;
+}
+
+.podcast-carousel .navigation .content .nav-item .nav-item-tittle:hover::before{
+    transform: scaleX(1);
+}
+
+.podcast-carousel .prev-button{
+    left: 2em;
+    padding-right: 6px;
+}
+
+.podcast-carousel .next-button{
+    right: 2em;
+}
+
+.podcast-carousel .prev-button, .podcast-carousel .next-button {
+    z-index: 40;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: color 0.3s ease-in;
+    text-decoration: none;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.podcast-carousel .next-button:after, .podcast-carousel .prev-button:after {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 10%);
+    font-size: 20px;
+    position: relative;
+    left: px;
+}
+
+.podcast-carousel .prev-button #prev,
+.podcast-carousel .next-button #next {
+    border: none;
+    z-index: 40;
+    width: 45px;
+    height: 45px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease-in;
+    text-decoration: none;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: grid;
+    place-content: center;
+    justify-content: center;
+    border-radius: 22.5px;
+    transition: background-color 0.3s ease-in;
+}
+
+.podcast-carousel .prev-button #prev:hover,
+.podcast-carousel .next-button #next:hover {
+    background-color: #6CE2F0;
+    color:#000000
+} 
+
+.podcast-carousel .podcast-container {
+    position: relative;
+    height: calc(100% + 10px);
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    margin-bottom: -20px;
+    --animation-duration: 500ms;
+    --animation-delay: 200ms;
+    --cover-animation-delay: 200ms;
+    --scale-in-offset: 50px;
+}
+
+.podcast-carousel .podcast-container .podcast-item{
+    flex-shrink: 0;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    transition: opacity 0.4s ease-in;
+    cursor: grab;
+    overflow: hidden;
+    scale: 80%;
+}
+
+.podcast-carousel .podcast-container .podcast-item-release{
+    display: grid;
+    place-content: center;
+    padding-top: 10vh;
+}
+
+.podcast-carousel .podcast-container .podcast-item-background{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgb(17, 17, 17) 80%), var(--background-url) no-repeat;
+    background-position: center center !important;
+    background-size: cover;
+    
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .podcast-item-background{
+    filter: blur(5px);
+    
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .podcast-info-container{
+    width: 100vw;
+    display: grid;
+    grid-template-areas: "image text";
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .cover-image {
+    position: relative;
+    scale: 0.6;
+    grid-area: image;
+    display: flex;
+    flex-direction: row;
+    top: -5em;
+    left: 3em;
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .cover-image {
+    transition-delay: var(--cover-animation-delay);
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .podcast-tittle-action,
+.podcast-carousel .podcast-container .podcast-item-release .cover-image {
+    opacity: 0;
+    transform: translateX(var(--scale-in-offset));
+    transition: opacity var(--animation-duration) ease-in-out, transform var(--animation-duration) ease-in-out;
+}
+
+.podcast-carousel .podcast-container .podcast-item-release.active .podcast-info-container .podcast-tittle-action,
+.podcast-carousel .podcast-container .podcast-item-release.active .podcast-info-container .cover-image {
+    opacity: 1;
+    transform: none;
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .cover-image img {
+    object-fit: cover;
+    box-shadow: 0 60px 40px 20px rgb(0 0 0 / 35%);
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .cover-image img::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+    z-index: 2;
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .podcast-tittle-action{
+    grid-area: text;
+    width: 50rem;
+    margin-left: -100px;
+    margin-right: 20px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .podcast-tittle-action{
+    transition-delay: var(--animation-delay);
+}
+
+.h-xlarge {
+    text-transform: uppercase;
+    margin-top: 0;
+    font-size: 2em;
+    line-height: 1;
+    padding: 0 0 0 35px;
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .podcast-tittle-action .nav-item-tittle {
+    text-shadow: 0 0 20px rgb(0 0 0 / 55%);
+}
+
+.podcast-carousel .podcast-container .podcast-item-release .podcast-tittle-action .nav-item-tittle,
+.podcast-carousel .podcast-container .podcast-item-release .podcast-tittle-action .nav-item-subtittle {
+    text-decoration: none;
+}
+
+.podcast-carousel a {
+    font-weight: 500;
+}
+
+.h-xlarge .nav-item-tittle {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: #1C2430;
+    text-shadow: 0 6px 4px 2px rgba(0, 0, 0, 0.75);
+    font-size: 2em;
+    line-height: 1;
+
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.nav-item-subtittle {
+    margin: 0 40px;
+    text-transform: uppercase;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-text-stroke-color: white;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    font-size: 1.5em;
+    line-height: 1;
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    margin: 0 0 0 40px;
+    font-size: 20px;
+    font-weight: 400;
+    border: 0;
+    color: #F1F1F1;
+    background: transparent;
+    border-radius: 0;
+    padding: 10px 20px;
+    transition: color 100ms linear, background-color 100ms linear, border-color 100ms linear;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    position: relative;
+
+    background-color: #332775;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.btn:hover{
+    background-color: #6CE2F0;
+}
+
+.btn-2 {
+    font-size: 20px;
+    font-weight: 400;
+    border: solid 1px #ffffff;
+    color: #F1F1F1;
+    background: transparent;
+    border-radius: 0;
+    padding: 10px 20px;
+    transition: color 100ms linear, background-color 100ms linear, border-color 100ms linear;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    position: relative;
+    margin: 0 0 0 40px;
+
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.btn-2:hover{
+    background-color: #6CE2F0;
+}
+
+
+
+@keyframes opening-logo{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes opening-menu{
+    0% {transform: translateY(-500px);
+        opacity: 0%;}
+    80% {transform: translateY(30px);
+        opacity: 40%;}
+    100% {transform: translateY(0);
+        opacity: 100%;}
+}
+
+@keyframes opening-submenu{
+    0% {transform: scaleX(0);
+        opacity: 0%;}
+    100% {transform: scaleX(1);
+        opacity: 100%;}
+}
+
+@keyframes bounce{
+    0% {transform: translateY(500px);}
+    80% {transform: translateY(-30px);}
+    100% {transform: translateY(0);}
+}
+
+@media screen and (max-width: 1385px) {
+    
+    .podcast-carousel .podcast-container .podcast-item-release .podcast-info-container{
+        width: 800px;
+        grid-template-areas:
+        "image"
+        "text";
+        justify-items: center;
+        
+    }
+
+    .podcast-carousel .podcast-container .podcast-item-release .cover-image {
+        scale: 1;
+        flex-direction: column-reverse;
+        left: 0;
+    }
+
+    .podcast-carousel .podcast-container .podcast-item-release .cover-image img{
+        width: 600px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .podcast-carousel .podcast-container .podcast-item-release .podcast-tittle-action{
+        margin-left: 0;
+        align-items: center;
+        padding-top: 3rem;
+        max-width: 90vw;
+        margin-bottom: 40px;
+    }
+
+    .h-xlarge .nav-item-tittle {
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .btn {
+        margin: 0;
+    }
+    
+    .podcast-carousel .navigation .content {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1189px) {
+    nav .link-hide {
+        display: none;
+    }
+
+    nav .more {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1011px) {
+
+    #banner {
+        position: initial;
+        margin-top: -150px;
+        z-index: 100;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 880px) {
+    .podcast-carousel .podcast-container .podcast-item-release .cover-image img{
+        width: 400px;
+    }
+
+    .podcast-carousel .podcast-container .podcast-item-release .podcast-tittle-action{
+        padding-top: 0;
+    }
+
+    .h-xlarge .nav-item-tittle {
+        font-size: 1.5em;
+    }
+
+    .nav-item-subtittle {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 709px) {
+    nav ul{
+        display: none;
+    }
+
+    nav .logo-menu{
+        display: none;
+    }
+
+    nav .mobile{
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
+    #banner {
+        position: initial;
+        margin-top: 100px;
+        z-index: 100;
+        width: 100%;
+    }
+}
+
+/*
+
+    CONTACTANOS
+**/
+
+.contact{
+    background-color: #000;
+    padding-top: 150px;
+    color: white;
+}
+
+.contact .contact-container{
+    color: var(--background-color);
+    width: 100%;
+    margin-top: 0 auto;
+    text-align: center;
+    height: 300px;
+}
+
+.contact .contact-container h3{
+    color: white;
+}
+
+.contact .contact-container .colums{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin: 0 5%;
+}
+
+.contact .contact-container .location{
+    text-align: center;
+}
+.contact .contact-container .emails{
+    text-align: center;
+}
+
+.contact .contact-container .social{
+    text-align: center;
+}
+
+.contact .contact-container .social a:hover path{
+    color: white;
+    fill: var(--highlight-color);
+}
+
+@media screen and (max-width: 600px) {
+
+    .h-xlarge .nav-item-tittle {
+        font-size: 1em;
+    }
+
+    .nav-item-subtittle {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 470px) {
+
+    .podcast-carousel .podcast-container .podcast-item-background{
+        display: none;
+    }
+    
+    .h-xlarge .nav-item-tittle {
+        font-size: 0.7em;
+    }
+
+    .nav-item-subtittle {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .btn, .btn-2 {
+        font-size: 16px;
+        font-weight: 300;
+    }
+}
