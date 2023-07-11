@@ -41,14 +41,14 @@
     <div class="my-fixed-item ">
       <img class="im" src="2K_Fest_Announcement.png" alt="" width="100%" height="75%">
     </div>
-<br>
-<a href="show_ticket.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalRegisterEvent">Crear Nuevo ERvento</a>
+    <br>
+    <a href="show_ticket.html" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalManagerEvent">Crear Nuevo ERvento</a>
     <div class="container">
       <div class="row justify-content-center align-items-center g-2">
-        
+
         <div class="col">
           <div class="card border-primary" style="width: 18rem">
-            <span class="d-inline-block" tabindex="0" data-bs-sanitize="false" data-bs-html="true" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<video src=&quot;../../../videos/videoIntro.mp4&quot; width=&quot;640&quot; height=&quot;480&quot;></video>">
+            <span class="d-inline-block" tabindex="0" data-bs-sanitize="false" data-bs-html="true" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<p class='card-text'>ESPACIO RIESGO - AV el Salto 5.000</p>">
               <img src="2K_Fest_Announcement.png" class="card-img-top" alt="..." height="300">
             </span>
 
@@ -58,18 +58,18 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p> -->
-              <p class="card-text">ESPACIO RIESGO - AV el Salto 5.000</p>
+              
               <!-- <p class="card-text"></p> -->
               <!-- <a href="show_ticket.html" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ir a Comprar</a> -->
               <a href="show_ticket.html" class="btn btn-primary">Ir a Comprar</a>
             </div>
             <div class="card-footer">
-              <small class="text-body-secondary"><a href="#" class="btn btn-warning">editar</a>
-                <a href="#" class="btn btn-danger">eliminar</a></small>
+              <small class="text-body-secondary"><a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ModalManagerEvent" onclick="EventEdit('1')">editar</a>
+                <a href="#" class="btn btn-danger" onclick="EventDelete('2')">eliminar</a></small>
             </div>
           </div>
         </div>
-        
+
         <div class="col">
           <div class="card border-primary" style="width: 18rem">
             <span class="d-inline-block" tabindex="0" data-bs-sanitize="false" data-bs-html="true" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<video src=&quot;../../../videos/videoIntro.mp4&quot; width=&quot;640&quot; height=&quot;480&quot;></video>">
@@ -93,7 +93,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col">
           <div class="card border-primary" style="width: 18rem">
             <span class="d-inline-block" tabindex="0" data-bs-sanitize="false" data-bs-html="true" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<video src=&quot;../../../videos/videoIntro.mp4&quot; width=&quot;640&quot; height=&quot;480&quot;></video>">
@@ -117,7 +117,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col">
           <div class="card border-primary" style="width: 18rem">
             <span class="d-inline-block" tabindex="0" data-bs-sanitize="false" data-bs-html="true" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<video src=&quot;../../../videos/videoIntro.mp4&quot; width=&quot;640&quot; height=&quot;480&quot;></video>">
@@ -141,7 +141,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col">
           <div class="card border-primary" style="width: 18rem">
             <span class="d-inline-block" tabindex="0" data-bs-sanitize="false" data-bs-html="true" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="<video src=&quot;../../../videos/videoIntro.mp4&quot; width=&quot;640&quot; height=&quot;480&quot;></video>">
@@ -294,20 +294,20 @@
 
   <!-- modal registrarse evento-->
 
-  <div class="modal fade" id="ModalRegisterEvent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="ModalManagerEvent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <div>
-            <h1 style="background-color: #332775;" class="modal-title fs-5" id="exampleModalLabel">Registrar Nuevo Evento</h1>
+            <h1 style="background-color: #332775;" class="modal-title fs-5" id="mdltitulo">Registrar Nuevo Evento</h1>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
 
-          <form action="" id="formRegisterEvent">
+          <form action="" id="formManagerEvent">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="id" name="id" placeholder="" hidden value="">
+              <input type="text" class="form-control" id="id_event" name="id_event" placeholder="" hidden>
             </div>
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="event_name" name="event_name" placeholder="Mr Music" required>
@@ -326,7 +326,7 @@
               <label for="floatingPassword">Información del evento</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="spotify" name="spotify" placeholder="spotyfy" required>
+              <input type="text" class="form-control" id="spotify" name="spotify" placeholder="spotyfy" required>
               <label for="floatingPassword">spotify</label>
             </div>
             <div class="form-floating mb-3">
@@ -341,8 +341,8 @@
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             Cancelar
           </button>
-          <button type="button" onclick="eventRegister()" class="btn btn-primary">
-            Registrarse
+          <button type="button" id="mdltextbuton" onclick="eventRegister()" class="btn btn-primary">
+            Crear Evento
           </button>
         </div>
       </div>
@@ -351,6 +351,7 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
   <script>
@@ -388,21 +389,21 @@
 
 
 
-    // registrar eventos
+    // registrar y actualizareventos
     function eventRegister() {
-      var formData = new FormData($("#formRegisterEvent")[0]);
+      var formData = new FormData($("#formManagerEvent")[0]);
 
       var event_name = $('#event_name').val();
       var date_event = $('#date_event').val();
       var location = $('#location').val();
-      var password = $('#passwordR').val();
       var information = $('#information').val();
       var spotify = $('#spotify').val();
       var number_tickets = $('#number_tickets').val();
-      // var id = $('#id').val();
+      var id = $('#id_event').val();
+      var message = ['Evento registrado correctamente', 'Evento Editado correctamente'];
 
-      // console.log('id: ' + id, 'event_name: ' + event_name, 'date_event: ' + date_event, 'location: ' + location, 'password: ' + password, 'information: ' + information, 'spotify: ' + spotify, 'number_tickets: ' + number_tickets);
-      if (event_name == '' || date_event == '' || location == '' || password == '' || information == '' || spotify == '' || number_tickets == '') {
+      // console.log('id: ' + id, 'event_name: ' + event_name, 'date_event: ' + date_event, 'location: ' + location, 'information: ' + information, 'spotify: ' + spotify, 'number_tickets: ' + number_tickets);
+      if (event_name == '' || date_event == '' || location == '' || information == '' || spotify == '' || number_tickets == '') {
         Swal.fire(
           '',
           'Debes llenar todos los campos',
@@ -410,7 +411,7 @@
         )
       } else {
         $.ajax({
-          url: "controller/eventController.php?op=create_update",
+          url: "../../controller/eventController.php?op=create_update",
           type: "POST",
           data: formData,
           contentType: false,
@@ -425,24 +426,66 @@
                 'Error al regiostrar, intenta de nuevo',
                 'error'
               )
-            } else if (data == 99) {
-              Swal.fire(
-                '',
-                'El usuario con este correo ya esta registrado',
-                'error'
-              )
             } else {
               Swal.fire(
                 '',
-                'Registrado exitosamente, ya puedes iniciar sesion',
+                id == '' ? message[0] : message[1],
                 'success'
               )
-              $('#formRegister')[0].reset();
-              $('#ModalRegister').modal('hide');
+              $('#formManagerEvent')[0].reset();
+              $('#ModalManagerEvent').modal('hide');
             }
           }
         });
       }
+    }
+
+    // cargar datos para editar eventos
+    function EventEdit(id) {
+
+      $('#mdltitulo').html('Editando Evento');
+      $('#mdltextbuton').html('Editar Evento');
+
+      $.post("../../controller/eventController.php?op=edit", {
+        id: id
+      }, function(data) {
+        data = JSON.parse(data);
+        // console.log(data.id);
+        $('#id_event').val(data.id);
+        $('#event_name').val(data.event_name);
+        $('#date_event').val(data.date_event);
+        $('#location').val(data.location);
+        $('#information').val(data.information);
+        $('#spotify').val(data.spotify);
+        $('#number_tickets').val(data.number_tickets);
+      });
+    }
+
+    // eliminar eventos
+    function EventDelete(id) {
+
+      Swal.fire({
+        title: '',
+        text: "Esta seguro de Eliminar el evento?",
+        icon: 'warning',
+        showCancelButton: true,
+        // confirmButtonColor: '#3085d6',
+        confirmButtonText: "Si, eliminar",
+        // cancelButtonColor: '#d33',
+        cancelButtonText: "No"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.post("../../controller/eventController.php?op=delete", {
+            id: id
+          }, function(data) {
+            Swal.fire(
+              '',
+              'Evento Eliminado correctamente',
+              'success'
+            )
+          });
+        }
+      })
     }
   </script>
 
